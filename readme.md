@@ -15,7 +15,7 @@ Eg : TwoSum_IB.cpp etc...
 
 
 <p align="center">
-<img width="150" src="./tom_dead.gif"></img>
+<img width="300" src="./tom_dead.gif"></img>
 <p align="center">Dies from C++</p>
 </p>
 
