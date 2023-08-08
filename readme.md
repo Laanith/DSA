@@ -14,11 +14,9 @@ Eg : TwoSum_IB.cpp etc...
 ##### In each folder, I will try to make my custom data structure too and will upload the code. This will improve my implementation fundamentals..
 
 
-<!-- ![skull](./skull.png)
-###### Dies from -->
 <p align="center">
 <img width="150" src="./skull.png"></img>
-<p>Dies from C++</p>
+<p align="center">Dies from C++</p>
 </p>
 
 
