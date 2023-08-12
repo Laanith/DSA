@@ -5,6 +5,8 @@
 #define vpi vector<pair<int,int>>
 #define PYES cout<<"YES"<<endl
 #define PNO cout<<"NO"<<endl
+#define ima INT_MAX
+#define imi INT_MIN
 using namespace std;
 
 /*!SECTION : Problem Description ::
