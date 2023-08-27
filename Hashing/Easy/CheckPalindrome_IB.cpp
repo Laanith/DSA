@@ -22,11 +22,11 @@ void pvs(vs A){cout<<endl;for(auto x : A) cout<<x<<" ";cout<<endl;}
 
 
 /*!SECTION : Problem Description ::
-Given an integer array A of size N, find the first repeating element in it.
+Given a string A consisting of lowercase characters.
 
-We need to find the element that occurs more than once and whose index of first occurrence is smallest.
+Check if characters of the given string can be rearranged to form a palindrome.
 
-If there is no repeating element, return -1.
+Return 1 if it is possible to rearrange the characters of the string A such that it becomes a palindrome else return 0.
 
 */
 
@@ -34,19 +34,16 @@ If there is no repeating element, return -1.
 
 class Solution{
     public :
-        int solve(vi A);
+        int solve(string A);
 };
 
-int Solution::solve(vi A){
-   
-    map<int,int> m ;
-
-    for(int i = 0 ; i < A.size() ; i++){
-        if(m[A[i]]==1) return A[i];
-        m[A[i]]++;
+int Solution::solve(string A) {
+    unordered_set<char> s;
+    for(auto x : A){
+        if( s.find(x) == s.end() ) s.insert(x);
+        else s.erase(x);
     }
-    
-    return -1;
+    return (s.empty() || s.size() == 1 ) ? 1 : 0 ;
 }
 
 
@@ -56,6 +53,7 @@ int main(){
 ios::sync_with_stdio(0);
 cin.tie(0);
 auto S = new Solution();
-cout<<S->solve({1,2,3,3,4,1,5,6});
+cout<<S->solve("aabababaa");
+
 return 0 ;
 }
