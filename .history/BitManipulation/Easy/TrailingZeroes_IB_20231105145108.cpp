@@ -1,0 +1,98 @@
+#include<bits/stdc++.h>
+#define ll long long
+#include<algorithm>
+#define vi vector<int>
+#define vpi vector<pair<int,int>>
+#define PYES cout<<"YES"<<endl
+#define PNO cout<<"NO"<<endl
+#define vs vector<string>
+#define qi queue<int>
+#define si stack<int>
+#define pi pair<int,int>
+#define ima INT_MAX
+#define imi INT_MIN
+#define siz size()
+#define pb push_back()
+using namespace std;
+void pv(vi A){cout << endl;for(auto x : A) cout << x <<' ';cout << endl;}
+void pint(int A){cout<<endl<<A<<endl;}
+void pp(pair<int,int> p){cout<<p.first<<' '<<p.second<<endl;}
+
+/*!SECTION : Problem Description ::
+
+ Problem Description
+
+Given an integer A, count and return the number of trailing zeroes.
+
+
+
+Problem Constraints
+1 <= A <= 109
+
+
+
+Input Format
+First and only argument is an integer A.
+
+
+
+Output Format
+Return an integer denoting the count of trailing zeroes.
+
+
+
+Example Input
+Input 1:
+
+ A = 18
+Input 2:
+
+ A = 8
+
+
+Example Output
+Output 1:
+
+ 1
+Output 2:
+
+ 3
+*/
+
+class Solution{
+public :
+    int solve(int A);
+};
+
+string intToBinary(int number)
+{
+    if (number == 0)
+    {
+        return "0"; // Special case for 0
+    }
+
+    string binary;
+    while (number > 0)
+    {
+        // Append the least significant bit (LSB) to the binary string
+        binary = ((number & 1) ? "1" : "0") + binary;
+        number >>= 1; // Right-shift the number to get the next bit
+    }
+
+    return binary;
+}
+
+int Solution::solve(int A){
+    cout <<intToBinary(A) << endl;
+    return log2(A & ~(A - 1));
+}
+ 
+ 
+int main(){
+ios::sync_with_stdio(0);
+cin.tie(0);
+auto S = new Solution();
+pint(S->solve(18));
+
+return 0 ;
+}
