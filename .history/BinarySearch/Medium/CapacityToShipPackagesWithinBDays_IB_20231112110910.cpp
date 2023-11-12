@@ -27,7 +27,6 @@ Return the least weight capacity of the ship that will result in all the package
 
 
 
-
 Problem Constraints
 1 <= B <= |A| <= 5 * 105
 1 <= A[i] <= 105

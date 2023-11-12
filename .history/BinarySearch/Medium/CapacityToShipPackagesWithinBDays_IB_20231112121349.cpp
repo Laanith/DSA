@@ -9,6 +9,7 @@
 #define qi queue<int>
 #define si stack<int>
 #define pi pair<int,int>
+#include<chrono>
 #define ima INT_MAX
 #define imi INT_MIN
 #define siz size()
