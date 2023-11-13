@@ -54,10 +54,9 @@ Output 2:
 6
 
 
-//NOTE - I got to know that the algorithm implemented below is called Kadane's algorithm.
+
 
 */
-
 
 class Solution{
 public :
