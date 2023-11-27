@@ -4,6 +4,9 @@
         "*.ejs": "html",
         "ostream": "cpp",
         "new": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "*.tcc": "cpp",
+        "list": "cpp",
+        "forward_list": "cpp"
     }
 }
