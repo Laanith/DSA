@@ -21,7 +21,7 @@ void pp(pair<int,int> p){cout<<p.first<<' '<<p.second<<endl;}
 /*!SECTION : Problem Description ::
 Problem Description
 
-Given a number A. Find the factorial of the number.
+Given a number A. Find the fatorial of the number.
 
 
 
