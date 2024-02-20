@@ -1,8 +1,6 @@
 @echo off
 setlocal
 
-rm -rf ./.history
-
 set "targetFolder=D:\Code\DSA"
 
 :DeleteFiles
