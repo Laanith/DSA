@@ -8,5 +8,6 @@
         "*.tcc": "cpp",
         "list": "cpp",
         "forward_list": "cpp"
-    }
+    },
+    "CodeGPT.apiKey": "CodeGPT Plus Beta"
 }
