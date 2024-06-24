@@ -45,7 +45,7 @@ Your Task:
 You don't need to read input or print anything. Complete the function frequencyCount() that takes the array arr, and integers n, and p as input parameters and modify the array in-place to denote the frequency count of each element from 1 to N.
 
 Expected time complexity: O(N)
-Expected auxiliay space: O(1)
+Expected auxiliary space: O(1)
 
 Constraints:
 1 ≤ n ≤ 105
