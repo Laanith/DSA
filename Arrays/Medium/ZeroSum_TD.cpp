@@ -134,7 +134,7 @@ public:
         int sum = 0;
         for (int i = 0; i < A.size(); i++)
         {
-            sum += i;
+            sum += A[i];
             if (s.find(sum) != s.end())
                 return true;
             s.insert(sum);
