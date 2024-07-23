@@ -150,6 +150,8 @@ int main()
     auto S = new Solution();
     vi A = {4,2,1,-3,6};
     cout<<boolalpha<<S->hasZeroSumSubArray(A)<<endl;
+    vi B = {1,2,3,4,5};
+    cout<<boolalpha<<S->hasZeroSumSubArray(B)<<endl;
 
     return 0;
 }
