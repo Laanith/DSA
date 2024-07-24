@@ -59,7 +59,7 @@ public :
                 while(it !=map.end() && it->first == sum){
                     ans.push_back(make_pair(it->second+1, i));
                     it++;
-                }
+                 }
             }
 
             map.insert(pair<int,int>(sum,i));
