@@ -15,4 +15,4 @@ git add -A
 
 git commit -m "Latest Commit"
 
-git push -u origin main
+git push -u -f origin main
