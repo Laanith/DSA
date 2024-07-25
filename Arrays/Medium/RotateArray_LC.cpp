@@ -55,6 +55,25 @@ public :
         reverse(nums.begin()+k, nums.end());
         return;
     }
+
+
+    void Reverse(vi &nums, int start, int end){
+        while(start<=end){
+            int temp = nums[start];
+            nums[start] = nums[end];
+            nums[end] = temp;
+            start++;
+            end--;
+        }
+        return;
+    }
+
+
+    void rotateUsingCustomReverse(vi & nums, int k){
+        Reverse(nums, 0, nums.size()-1);
+        Reverse(nums, 0 , k-1);
+        Reverse(nums, k, nums.size()-1);
+    }
 };
  
  
@@ -63,7 +82,7 @@ ios::sync_with_stdio(0);
 cin.tie(0);
 auto S = new Solution();
 vi A = {1,2,3,4,5,6,7};
-S->rotateUsingReversals(A,2);
+S->rotateUsingCustomReverse(A,4);
 pv(A);
  
  
