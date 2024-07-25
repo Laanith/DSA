@@ -45,7 +45,14 @@ public :
 
         for(int i=0; i<k;i++) nums[i] = A[i];
 
+        return;
+    }
 
+
+    void rotateUsingReversals(vi &nums, int k){
+        reverse(nums.begin(), nums.end());
+        reverse(nums.begin(), nums.begin()+k);
+        reverse(nums.begin()+k, nums.end());
         return;
     }
 };
@@ -56,7 +63,7 @@ ios::sync_with_stdio(0);
 cin.tie(0);
 auto S = new Solution();
 vi A = {1,2,3,4,5,6,7};
-S->rotate(A, 6);
+S->rotateUsingReversals(A,2);
 pv(A);
  
  
