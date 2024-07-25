@@ -1,6 +1,7 @@
 {
     "C_Cpp.default.compilerPath": "C:\\MinGW\\bin\\g++.exe",
     "files.associations": {
+        "*.embeddedhtml": "html",
         "*.ejs": "html",
         "ostream": "cpp",
         "new": "cpp",
@@ -10,7 +11,22 @@
         "forward_list": "cpp",
         "deque": "cpp",
         "string": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "array": "cpp",
+        "unordered_map": "cpp",
+        "unordered_set": "cpp",
+        "memory": "cpp",
+        "fstream": "cpp",
+        "functional": "cpp",
+        "future": "cpp",
+        "istream": "cpp",
+        "shared_mutex": "cpp",
+        "sstream": "cpp",
+        "streambuf": "cpp",
+        "thread": "cpp",
+        "regex": "cpp",
+        "tuple": "cpp",
+        "valarray": "cpp"
     },
     "CodeGPT.apiKey": "CodeGPT Plus Beta"
 }
