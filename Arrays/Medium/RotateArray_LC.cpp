@@ -70,6 +70,8 @@ public :
 
 
     void rotateUsingCustomReverse(vi & nums, int k){
+        if(nums.size()==0) return;
+        k = k%nums.size();
         Reverse(nums, 0, nums.size()-1);
         Reverse(nums, 0 , k-1);
         Reverse(nums, k, nums.size()-1);
