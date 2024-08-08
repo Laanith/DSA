@@ -67,6 +67,32 @@ Constraint:
  
 
 
+ int f(int day, int last, vvi &arr, vvi&dp){
+   if(day==0){
+      int maxi = imi;
+      for(int i  = 0 ; i < 3; i++){
+         if(i!=last) maxi = max(maxi, arr[0][i]);
+      }
+      return dp[day][last] = maxi;
+   }
+
+   if(dp[day][last]!=-1) return dp[day][last];
+
+   int maxi = imi;
+   for(int i = 0 ; i < 3; i++){
+      if(i!=last){
+         int points = f(day-1, i, arr, dp) + arr[day][i];
+         maxi = max(maxi, points);
+      }
+   }
+
+   return dp[day][last] = maxi;
+ }
+
+
+int solve(int n, vvi &arr, vvi &dp){
+   return f(n-1, 3, arr, dp);
+}
 
 
  
@@ -74,9 +100,9 @@ class Solution{
 public :
    int maxPoint(vvi arr, int n){
 
-    vvi dp(n, vector<int>(3,-1));
+    vvi dp(n, vector<int>(4,-1));
 
-    // return solve(n, arr, dp);
+    return solve(n, arr, dp);
 
    }
 };
@@ -87,8 +113,8 @@ ios::sync_with_stdio(0);
 cin.tie(0);
 auto S = new Solution();
 
-vvi x;
-S->maxPoint(x, 4);
+vvi x = {{ 1,2,5},{3,1,1},{3,3,3}};
+pint(S->maxPoint(x,3));
 
  
 return 0 ;
