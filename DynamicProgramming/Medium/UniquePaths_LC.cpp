@@ -73,6 +73,7 @@ int func(int i, int j, vvi &dp,int n,int m){
 class Solution{
 public :
     int uniquePaths(int m, int n){
+        if(m==1 && n==1) return 1;
         vvi dp(m,vi(n,-1));
         int ans = func(0,0, dp,n,m);
         pvvi(dp);
