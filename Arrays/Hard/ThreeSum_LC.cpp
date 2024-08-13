@@ -90,7 +90,37 @@ public :
         }
         vvi ans(s.begin(), s.end());
         return ans;
+
+        // O(n^2) time
+
    }
+
+    vvi threeSumUsingSorting(vi & nums){
+        vvi ans;
+        sort(nums.begin(), nums.end());
+        int n = nums.size();
+        for(int i = 0; i < n; i++){
+            if(i>=0 && nums[i] == nums[i-1]) i++;
+            int j = i+1;
+            int k = n-1;
+            while(j<k){
+                int sum = nums[i]+nums[j]+nums[k];
+                if(sum<0) j++;
+                else if (sum > 0) k--;
+                else {
+                    vi temp = {nums[i], nums[j], nums[k]};
+                    ans.push_back(temp);
+                    j++; k--;
+                    while(nums[j] == nums[j-1]) j++;
+                    while(nums[k]== nums[k+1]) k--;
+                }
+            }
+        }
+
+        return ans;
+
+    }
+
 };
  
  
@@ -100,6 +130,11 @@ cin.tie(0);
 auto S = new Solution();
 vi nums   = {-1,0,1,2,-1,-4};
 pvvi(S->threeSumUsingHashing(nums));
+
+cout<<endl;
+
+
+pvvi(S->threeSumUsingSorting(nums));
 
  
 return 0 ;
