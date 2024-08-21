@@ -63,41 +63,40 @@ Constraints:
 class Solution{
 public :
 
-
- void checkAndIncrement(int index, int sum, int &count, int arr[], int n, int target, int & iter) {
-        // Base case: when the sum matches the target, increment the count
-        if (sum == target) {
-            count++;
-            return;
-        }
-        
-        // If the index is out of bounds or sum exceeds the target, terminate the path
-        if (index >= n || sum > target) {
-            return;
-        }
-        
-        // Recursive case: explore including the current element and not including it
-        checkAndIncrement(index + 1, sum + arr[index], count, arr, n, target, ++iter);  // Include current element
-        checkAndIncrement(index + 1, sum, count, arr, n, target, ++iter);               // Exclude current element
+ int checkAndIncrement(int index, int sum,int arr[], int n, int target, int & iter) {
+        if(sum>target) return 0;
+        if(index >= n && sum == target) return 1;
+        else if(index>=n) return 0;
+        int count = 0;
+        count += checkAndIncrement(index + 1, sum + arr[index],arr, n, target, ++iter);  
+        count += checkAndIncrement(index + 1, sum, arr, n, target, ++iter);   
+        return count;            
     }
 
 
-    // void checkAndIncrement(int index, int sum, int & count, int arr[], int n,int target, int & iter){
-    //     if(sum==target) {count++; return;}
-    //     if(index>=n) return;
-    //     sum+=arr[index];
-    //     checkAndIncrement(index+1,sum,count,arr,n,target, ++iter);
-    //     sum-=arr[index];
-    //     checkAndIncrement(index+1,sum,count,arr,n,target, ++iter);
-    // }
+    int func(int index, int arr[], int n, int target, int & iter, vvi &dp){
+        //NOTE - A DP version of top-down memoization
+        if(target == 0 ) return 1;
+        if(index == 0) return target == arr[0];
+        if(dp[index][target]!=-1) return dp[index][target];
+        int notPick = func(index-1,arr,n,target,++iter,dp);
+        int pick = 0;
+        if(arr[index]<=target) pick = func(index-1,arr,n,target-arr[index],++iter, dp);
+        return dp[index][target] = (pick+notPick);
+
+    }
+
 
     int countSums(int arr[], int n, int target){
+        vvi dp(n,vi(target+1, -1));
         int count = 0;
         int iter = 0;
-        checkAndIncrement(0,0,count,arr,n,target,iter);
+        count = func(n-1,arr,n,target,iter, dp);
         cout<<"Function calls : "<<iter<<endl;
         return count;
     }
+
+
 
 };
  
