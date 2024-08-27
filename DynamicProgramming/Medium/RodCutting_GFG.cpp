@@ -91,6 +91,25 @@ public :
         vvi dp(n, vi(wt+1, -1));
         return func(n-1, wt, prices, dp);
     }
+
+    int cutRodTabulation( vi & prices){
+        int n = prices.size();
+        vvi dp(n, vi(n+1, imi));
+        for(int i=0;i<n+1;i++) dp[0][i] = (i)*prices[0];
+        for(int i=1;i<n;i++){ 
+            for(int len = 0; len < n+1; len++){
+                int notPick = dp[i-1][len];
+                int pick = imi;
+                int rodLength = i+1;
+                if(len >= rodLength) pick = prices[i] + dp[i][len -rodLength];
+                dp[i][len] = max(notPick, pick);
+            }
+        }
+
+        pvvi(dp);
+
+        return dp[n-1][n];
+    }
 };
  
  
@@ -100,6 +119,7 @@ cin.tie(0);
 auto S = new Solution();
 vi p = {3,5,8,9,10,17,17,20};
 pint(S->cutRod(p));
+pint(S->cutRodTabulation(p));
 
  
 return 0 ;
