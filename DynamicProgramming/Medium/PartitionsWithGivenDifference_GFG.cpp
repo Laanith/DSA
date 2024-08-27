@@ -115,5 +115,7 @@ A = {0,1,2,2,2,3,0,3,0,1};
 pint(S->countPartitions(A,12));
 
 
+// cout<<A.max_size()<<endl;
+
 return 0 ;
 }
