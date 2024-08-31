@@ -93,7 +93,7 @@ public :
     int longestCommonSubsequenceTabulation(string s1, string s2){
         int m = s1.size(), n= s2.size();
         vvi dp(m+1, vi(n+1, -1));
-        dp[0][0] = s1[0]==s2[0];
+        dp[0][0] = 0;
         for(int i = 0; i < m+1; i++) dp[i][0] = 0;
         for(int j = 0; j < n+1; j++) dp[0][j] = 0;
         for(int i=1;i<m+1;i++){
