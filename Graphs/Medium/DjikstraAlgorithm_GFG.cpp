@@ -100,6 +100,7 @@ public :
         while(!pq.empty()){
             int nodeDist = pq.top().first;
             int node = pq.top().second;
+            pq.pop();
             for(vi & neigh : adj[node]){
                 int neighNode = neigh[0];
                 int neighDist = neigh[1];
@@ -113,6 +114,33 @@ public :
         for(int & it : dist) if(it==ima) it = -1;
         return dist;
     }
+
+    vi djikstraUsingSet(int V, vvi adj[], int S){
+        set<pair<int,int>> s;
+        vi dist(V, ima);
+        dist[S]=0;
+        s.insert({0,S});
+        while(!s.empty()){
+            pi it = *s.begin();
+            int node = it.second;
+            int nodeDist = it.first;
+            s.erase(it);
+            for(vi neigh : adj[node]){
+                int neighNode = neigh[0];
+                int edgWt = neigh[1];
+                int newDist = nodeDist + edgWt;
+                if(newDist < dist[neighNode]){
+                    if(dist[neighNode]!=ima) s.erase({dist[neighNode], neighNode});
+
+                    dist[neighNode] = newDist;
+                    s.insert({newDist, neighNode});
+                }
+            }
+        }
+
+        for(int & it : dist) if(it==ima) it = -1;
+        return dist;
+    }
 };
  
  
@@ -120,6 +148,11 @@ int main(){
 ios::sync_with_stdio(0);
 cin.tie(0);
 auto S = new Solution();
+vvi adj[] = {{{1, 1}, {2, 6}}, {{2, 3}, {0, 1}}, {{1, 3}, {0, 6}}};
+pv(S->djikstra(3,adj,2));
+pv(S->djikstraUsingSet(3,adj,2));
+
+
 
  
 return 0 ;
