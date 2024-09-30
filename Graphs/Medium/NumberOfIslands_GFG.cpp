@@ -214,6 +214,9 @@ int main(){
 ios::sync_with_stdio(0);
 cin.tie(0);
 auto S = new Solution();
+int n = 4,m = 5, k = 4;
+vvi A = {{0,0},{1,1},{2,2},{3,3}};
+pv(S->numOfIslands(n,m,A));
 
  
 return 0 ;
