@@ -19,10 +19,10 @@
 #define vvi vector<vector<int>>
 #define pb push_back
 using namespace std;
-void pv(vi A){cout << endl;for(auto x : A) cout << x <<' ';cout << endl;}
+void pv(vi A){for(auto x : A) cout << x <<' ';cout << endl;}
 void pint(int A){cout<<endl<<A<<endl;}
 void pp(pair<int,int> p){cout<<p.first<<' '<<p.second<<endl;}
-void pvvi(vvi A){for(auto v : A){pv(v);}}
+void pvvi(vvi A){cout << endl;for(auto v : A){pv(v);}}
 
 
 
@@ -68,6 +68,10 @@ cin.tie(0);
 auto S = new Solution();
 
 vvi matrix = {{1,2,3}, {4,5,6}, {7,8,9}};
+pvvi(matrix);
+pv(S->spiralOrder(matrix));
+
+matrix = {{1,2,3}, {8,9,4}, {7,6,5}};
 pvvi(matrix);
 pv(S->spiralOrder(matrix));
 

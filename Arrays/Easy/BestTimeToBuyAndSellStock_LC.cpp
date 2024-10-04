@@ -25,8 +25,7 @@ void pv(vi A)
         cout << x << ' ';
     cout << endl;
 }
-void pint(int A) { cout << endl
-                        << A << endl; }
+void pint(int A) { cout << endl<< A << endl; }
 void pp(pair<int, int> p) { cout << p.first << ' ' << p.second << endl; }
 void pvvi(vvi A)
 {

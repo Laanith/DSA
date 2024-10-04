@@ -64,6 +64,17 @@ public :
 
         return ans;
     }
+
+    vi leadersOptimal(int n, int arr[]){
+        int maxUntilNow = imi;
+        vi ans;
+        for(int i = n-1; i >=0 ; i--){
+            if(arr[i] >= maxUntilNow) ans.push_back(arr[i]);
+            maxUntilNow = max(maxUntilNow , arr[i]);
+        }
+        reverse(ans.begin(), ans.end());
+        return ans;
+    }
 };
  
  
@@ -73,8 +84,11 @@ cin.tie(0);
 auto S = new Solution();
 int arr[] = {16,17,4,3,5,2};
 pv(S->leaders(6, arr));
+pv(S->leadersOptimal(6,arr));
 int arr2[] = {30,10,10,5};
 pv(S->leaders(4, arr2));
+pv(S->leadersOptimal(4,arr2));
+
 
 
 return 0 ;

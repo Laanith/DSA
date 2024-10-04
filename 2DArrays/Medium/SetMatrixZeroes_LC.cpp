@@ -69,6 +69,25 @@ public :
         return;
         
     }
+
+
+    void setZeroesOptimal(vvi & matrix){
+        int n = matrix.size(), m = matrix[0].size();
+        vi rows(n, 0), cols(m, 0);
+        for(int i = 0; i < n; i++){
+            for(int j = 0 ; j < m; j++){
+                if(!matrix[i][j]) {rows[i]=1; cols[j]=1;}
+            }
+        }
+
+
+        
+        for(int i = 0; i < n; i++){
+            for(int j = 0 ; j < m; j++){
+                if(rows[i] || cols[j]) {matrix[i][j] = 0;}
+            }
+        }
+    }
 };
  
  
@@ -78,7 +97,7 @@ cin.tie(0);
 auto S = new Solution();
 vvi matrix = {{0,1,2,0},{3,4,5,2},{1,3,1,5}};
 pvvi(matrix);
-S->setZeroes(matrix);
+S->setZeroesOptimal(matrix);
 cout << endl;
 pvvi(matrix);
 
@@ -86,7 +105,7 @@ cout << endl;
 cout << endl;
 matrix = {{1,1,1},{1,0,1},{1,1,1}};
 pvvi(matrix);
-S->setZeroes(matrix);
+S->setZeroesOptimal(matrix);
 cout << endl;
 pvvi(matrix);
 
