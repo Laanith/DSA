@@ -70,6 +70,10 @@ All the integers of nums are unique.
 nums is a permutation of all the numbers in the range [0, n - 1].
 
 */
+
+//NOTE - Every local inversion is a global inversion. The aim is to return false if we find a non-local global inversion
+// For that we use max_so_far. If max_so_far is greater than nums[i+2] then we found a non-local global inversion
+// and we can return false. Else keep checking for it. When loop ends return true.
  
  
 class Solution{
